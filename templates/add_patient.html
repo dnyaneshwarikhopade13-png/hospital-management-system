@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Patient</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>🧑 Add Patient</h1>
+
+<h3>Enter Patient Details</h3>
+
+<form action="/add_patient" method="POST">
+
+<input
+type="text"
+name="patient_name"
+placeholder="Patient Name"
+required>
+
+<input
+type="number"
+name="age"
+placeholder="Age"
+required>
+
+<input
+type="text"
+name="gender"
+placeholder="Gender"
+required>
+
+<input
+type="tel"
+name="phone"
+placeholder="Enter 10-digit Phone Number"
+pattern="[0-9]{10}"
+maxlength="10"
+required>
+
+<input
+type="text"
+name="disease"
+placeholder="Disease"
+required>
+
+<button type="submit">
+
+Save Patient
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+
+<button>
+
+Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

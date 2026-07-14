@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="login-box">
+
+        <h1>🏥 Hospital Management System</h1>
+
+        <h3>Login</h3>
+
+<form action="/login" method="POST">
+            <input
+    type="text"
+    name="username"
+    placeholder="Username"
+    required>
+     <input
+    type="password"
+    name="password"
+    placeholder="Enter Password"
+    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+    title="Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character."
+    required>
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

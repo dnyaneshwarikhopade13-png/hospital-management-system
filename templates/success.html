@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Success</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="login-box">
+
+        <h1 class="success-title">
+            {{ title }}
+        </h1>
+
+        <br>
+
+        <h3 class="success-text">
+            {{ message }}
+        </h3>
+
+        <br><br><br>
+
+        <a href="{{ add_url }}">
+            <button>{{ add_button }}</button>
+        </a>
+
+        <br><br>
+
+        <a href="/dashboard">
+            <button>Back to Dashboard</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

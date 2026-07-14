@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Hospital Bill</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+.bill{
+
+width:900px;
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:left;
+
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.bill h1{
+
+text-align:center;
+
+color:#1565C0;
+
+font-size:60px;
+
+}
+
+.bill h2{
+
+font-size:35px;
+
+margin:20px 0;
+
+}
+
+.total{
+
+font-size:45px;
+
+color:red;
+
+font-weight:bold;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="bill">
+
+<h1>🏥 Hospital Bill</h1>
+
+<hr>
+
+<h2>Patient Name : {{ patient }}</h2>
+
+<h2>Consultation Fee : ₹ {{ consultation }}</h2>
+
+<h2>Medicine Charges : ₹ {{ medicine }}</h2>
+
+<h2>Room Charges : ₹ {{ room }}</h2>
+
+<h2>Test Charges : ₹ {{ test }}</h2>
+
+<hr>
+
+<p class="total">
+
+Total Bill : ₹ {{ total }}
+
+</p>
+
+<br><br>
+
+<div style="text-align:center;">
+
+<button onclick="window.print()">
+
+🖨 Print Bill
+
+</button>
+
+<br><br>
+
+<a href="/billing">
+
+<button>
+
+Generate Another Bill
+
+</button>
+
+</a>
+
+<br><br>
+
+<a href="/dashboard">
+
+<button>
+
+Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

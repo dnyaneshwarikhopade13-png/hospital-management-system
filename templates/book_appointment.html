@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Book Appointment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>📅 Book Appointment</h1>
+
+<h3>Select Patient and Doctor</h3>
+
+<form action="/book_appointment" method="POST">
+
+<select name="patient_id" required>
+
+<option value="">Select Patient</option>
+
+{% for patient in patients %}
+
+<option value="{{ patient[0] }}">
+{{ patient[1] }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<select name="doctor_id" required>
+
+<option value="">Select Doctor</option>
+
+{% for doctor in doctors %}
+
+<option value="{{ doctor[0] }}">
+{{ doctor[1] }}
+</option>
+
+{% endfor %}
+
+</select>
+
+<input
+type="date"
+name="appointment_date"
+required>
+
+<input
+type="time"
+name="appointment_time"
+required>
+
+<button type="submit">
+
+Book Appointment
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+
+<button>
+
+Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

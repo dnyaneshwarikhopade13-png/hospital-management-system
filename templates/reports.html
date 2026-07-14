@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Hospital Reports</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        .report-box{
+
+            width:1400px;
+
+            background:white;
+
+            padding:70px;
+
+            border-radius:40px;
+
+            text-align:center;
+
+            box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+        }
+
+        .report-box h1{
+
+            font-size:70px;
+
+            color:#1565C0;
+
+            margin-bottom:40px;
+
+        }
+
+        .report-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(2,1fr);
+
+            gap:30px;
+
+            margin-top:30px;
+
+        }
+
+        .report-card{
+
+            background:#1565C0;
+
+            color:white;
+
+            border-radius:25px;
+
+            padding:35px;
+
+        }
+
+        .report-card h2{
+
+            font-size:40px;
+
+            margin-bottom:15px;
+
+        }
+
+        .report-card p{
+
+            font-size:55px;
+
+            font-weight:bold;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="report-box">
+
+<h1>📊 Hospital Reports</h1>
+
+<div class="report-grid">
+
+<div class="report-card">
+
+<h2>👨‍⚕️ Total Doctors</h2>
+
+<p>{{ total_doctors }}</p>
+
+</div>
+
+<div class="report-card">
+
+<h2>🧑 Total Patients</h2>
+
+<p>{{ total_patients }}</p>
+
+</div>
+
+<div class="report-card">
+
+<h2>📅 Appointments</h2>
+
+<p>{{ total_appointments }}</p>
+
+</div>
+
+<div class="report-card">
+
+<h2>🟢 Scheduled</h2>
+
+<p>{{ scheduled }}</p>
+
+</div>
+
+<div class="report-card">
+
+<h2>✅ Completed</h2>
+
+<p>{{ completed }}</p>
+
+</div>
+
+<div class="report-card">
+
+<h2>❌ Cancelled</h2>
+
+<p>{{ cancelled }}</p>
+
+</div>
+
+</div>
+
+<br><br>
+
+<a href="/dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
