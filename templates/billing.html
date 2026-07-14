@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Hospital Billing</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>💳 Hospital Billing</h1>
+
+<br>
+
+<form action="/generate_bill" method="POST">
+
+<select name="patient_id" required>
+
+<option value="">-- Select Patient --</option>
+
+{% for patient in patients %}
+
+<option value="{{ patient[0] }}">
+
+{{ patient[1] }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<input
+type="number"
+name="consultation_fee"
+placeholder="Consultation Fee"
+required>
+
+<br><br>
+
+<input
+type="number"
+name="medicine_charge"
+placeholder="Medicine Charges"
+required>
+
+<br><br>
+
+<input
+type="number"
+name="room_charge"
+placeholder="Room Charges"
+required>
+
+<br><br>
+
+<input
+type="number"
+name="test_charge"
+placeholder="Test Charges"
+required>
+
+<br><br>
+
+<button type="submit">
+
+Generate Bill
+
+</button>
+
+</form>
+
+<br><br>
+
+<a href="/dashboard">
+
+<button>
+
+⬅ Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

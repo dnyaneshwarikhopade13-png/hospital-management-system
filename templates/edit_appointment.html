@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Appointment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>✏️ Edit Appointment</h1>
+
+<h3>Update Appointment Details</h3>
+
+<form action="/edit_appointment/{{ appointment[0] }}" method="POST">
+
+<input
+type="date"
+name="appointment_date"
+value="{{ appointment[3] }}"
+required>
+
+<input
+type="time"
+name="appointment_time"
+value="{{ appointment[4] }}"
+required>
+
+<select name="status" required>
+
+<option value="Scheduled"
+{% if appointment[5] == "Scheduled" %}selected{% endif %}>
+Scheduled
+</option>
+
+<option value="Completed"
+{% if appointment[5] == "Completed" %}selected{% endif %}>
+Completed
+</option>
+
+<option value="Cancelled"
+{% if appointment[5] == "Cancelled" %}selected{% endif %}>
+Cancelled
+</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Update Appointment
+</button>
+
+</form>
+
+<br>
+
+<a href="/view_appointments">
+<button>
+Back to Appointment List
+</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

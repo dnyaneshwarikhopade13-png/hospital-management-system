@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Medicine List</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>💊 Medicine List</h1>
+
+<br>
+
+<h3>Disease : {{ disease }}</h3>
+
+<br>
+
+{% for medicine in medicines %}
+
+<h3>✔ {{ medicine }}</h3>
+
+<br>
+
+{% endfor %}
+
+<br><br>
+
+<a href="/medicine">
+
+<button>
+
+Search Another Disease
+
+</button>
+
+</a>
+
+<br><br>
+
+<a href="/dashboard">
+
+<button>
+
+Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

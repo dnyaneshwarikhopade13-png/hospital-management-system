@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>View Doctors</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box doctor-box">
+
+<h1>👨‍⚕️ Doctor List</h1>
+
+<br>
+
+<table border="1" width="100%" cellspacing="0" cellpadding="20">
+
+<tr>
+
+<th>ID</th>
+
+<th>Doctor Name</th>
+
+<th>Specialization</th>
+
+<th>Phone</th>
+
+<th>Email</th>
+
+<th>Actions</th>
+
+</tr>
+
+{% for doctor in doctors %}
+
+<tr>
+
+<td>{{ doctor[0] }}</td>
+
+<td>{{ doctor[1] }}</td>
+
+<td>{{ doctor[2] }}</td>
+
+<td>{{ doctor[3] }}</td>
+
+<td>{{ doctor[4] }}</td>
+
+<td class="action-buttons">
+
+    <a href="/edit_doctor/{{ doctor[0] }}" class="edit-btn">
+        ✏️ Edit
+    </a>
+
+    <a href="/delete_doctor/{{ doctor[0] }}" class="delete-btn">
+        🗑 Delete
+    </a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/dashboard">
+    <button>
+        Back to Dashboard
+    </button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

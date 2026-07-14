@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Doctor</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>👨‍⚕️ Add Doctor</h1>
+
+<h3>Enter Doctor Details</h3>
+
+<form action="/add_doctor" method="POST">
+
+<input
+type="text"
+name="doctor_name"
+placeholder="Doctor Name"
+required>
+
+<input
+type="text"
+name="specialization"
+placeholder="Specialization"
+required>
+
+<input
+type="tel"
+name="phone"
+placeholder="Enter 10-digit Phone Number"
+pattern="[0-9]{10}"
+maxlength="10"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<button type="submit">
+
+Save Doctor
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+
+<button>
+
+Back to Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

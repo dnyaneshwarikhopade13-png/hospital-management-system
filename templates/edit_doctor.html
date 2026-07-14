@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Doctor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-box">
+
+<h1>✏️ Edit Doctor</h1>
+
+<h3>Update Doctor Information</h3>
+
+<form action="/edit_doctor/{{ doctor[0] }}" method="POST">
+
+<input
+type="text"
+name="doctor_name"
+value="{{ doctor[1] }}"
+required>
+
+<input
+type="text"
+name="specialization"
+value="{{ doctor[2] }}"
+required>
+
+<input
+type="text"
+name="phone"
+value="{{ doctor[3] }}"
+required>
+
+<input
+type="email"
+name="email"
+value="{{ doctor[4] }}"
+required>
+
+<button type="submit">
+
+Update Doctor
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/view_doctors">
+
+<button>
+
+Back to Doctor List
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
